@@ -38,20 +38,23 @@
       <div class="card-body" id="cardbody">
         <!--list group-->
         <ul class="list-group list-group-flush" id="tasklist">
-          <li class="list-group-item align-item-center d-flex justify-content-between">
-            <div>
+          <li class="list-group-item">
+            <div class="row">
+            <div class="col-12 col-md-6 text-wrap text-break max-width:70%">
               <strong>Task 1</strong><br>
               <small>This is a sample description</small>
                <!--badge:indicate a message-->
               <h6><span class="badge bg-primary rounded-pill align-item-center">New</span></h6>
             </div>
-            <div class="dropdown">
+
+            <div class="col-12 col-md-6 dropdown d-flex justify-content-md-end">
             <!--drop down:usefull for providing links of action-->
-            <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-target="">Actions</button>
+            <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-target="" style="height: 40px;">Actions</button>
               <div class="dropdown-menu">
                 <button class="dropdown-item" onclick="deleteRow(this)">Delete Task</button>
-              </div>
-            </div>    
+              </div>   
+            </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -132,18 +135,20 @@
         var li=document.createElement("li");
         li.className="list-group-item d-flex justify-content-between align-item-start";
         li.innerHTML= `
-               <div>
+                <div class="row" mt-2>
+                <div class="col-12 col-md-6 text-wrap text-break max-width:70%">
                   <strong>${name}</strong><br>
                   <small>${taskdescription}</small>
                   <h6><span class="badge ${badgeclass} rounded-pill text-align-center">${Status}</span></h6>
                 </div>
-
-                <div class="dropdown">
-                <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-target="">Actions</button>
+                
+                <div class="col-12 col-md-6 dropdown d-flex justify-content-md-end">
+                <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-target="" style="height: 40px;">Actions</button>
                   <div class="dropdown-menu">
                      <button class="dropdown-item" onclick="deleteRow(this)">Delete Task</button>
                   </div>
-                </div>    
+                </div> 
+                </div>   
         `;
         
         tasklist.appendChild(li);
